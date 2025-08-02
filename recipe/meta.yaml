@@ -1,18 +1,18 @@
 {% set name = "esi-utils-io" %}
-{% set version = "1.0.2" %}
+{% set version = "1.1.1" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/esi-utils-io-{{ version }}.tar.gz
-  sha256: 4091213d1660032c55243e4b928847c52d44d8d6266d8ff6a3fe5383916b7807
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name | replace('-', '_') }}-{{ version }}.tar.gz
+  sha256: 2fffa8ac1650670a20d4fff7488833585b20e779e0b2d8457e6e7726fd13ad16
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 
 requirements:
   host:
